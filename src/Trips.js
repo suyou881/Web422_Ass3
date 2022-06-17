@@ -58,7 +58,7 @@ export default function Trips(){
                     </tr>
                 </thead>
                 <tbody>
-                    {trips.map((trip)=>{
+                    {trips?.map((trip)=>{
                         return (
                             <tr key={trip._id} className={trip.usertype} onClick={()=>{navigate(`/Trip/${trip._id}`)}}>
                                 <td>{trip.bikeid}</td>

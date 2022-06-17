@@ -54,7 +54,27 @@ export default function Trip(){
 
     }
 
-    if(trip){
+    if(loading===true){
+        return(
+            <>
+            <Card>
+                <Card.Body>
+                    <Card.Title>{`Unable to find Trip with id: ${id}`}</Card.Title>
+                </Card.Body>
+            </Card>
+            </>
+        )
+    } else if (loading === false && trip===null){
+        return(
+            <>
+            <Card>
+                <Card.Body>
+                    <Card.Title>{`Unable to find Trip with id: ${id}`}</Card.Title>
+                </Card.Body>
+            </Card>
+            </>
+        )
+    }else if(trip){
         return (
             <>
             <Card>
@@ -120,16 +140,5 @@ export default function Trip(){
             </Form>
             </>
         )
-    }else{
-        return(
-            <>
-            <Card>
-                <Card.Body>
-                    <Card.Title>{`Unable to find Trip with id: ${id}`}</Card.Title>
-                </Card.Body>
-            </Card>
-            </>
-        )
     }
-    
 }
